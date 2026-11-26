@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>History of Visual Communication – Question Bank</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:wght@400;600&family=Noto+Naskh+Arabic:wght@400;600&display=swap">
+<style>
+:root{--bg1:#f3e8c8;--bg2:#e4d3a4;--ink:#2b2114;--mut:#6b5a3c;--card:rgba(255,250,235,.82);--line:#c9b27a;--gold:#9a6b12;--ok:#2f7d4f;--okb:#d8efdf;--bad:#b23a26;--badb:#f6dad4;--glyph:154,107,18;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#0f1a33;--bg2:#241a3a;--ink:#f1e7cf;--mut:#b9ab8a;--card:rgba(20,28,52,.78);--line:#4a4a6a;--gold:#e0b44a;--ok:#6fd49a;--okb:rgba(47,125,79,.28);--bad:#ff8a73;--badb:rgba(178,58,38,.3);--glyph:224,180,74}}
+:root[data-theme="dark"]{--bg1:#0f1a33;--bg2:#241a3a;--ink:#f1e7cf;--mut:#b9ab8a;--card:rgba(20,28,52,.78);--line:#4a4a6a;--gold:#e0b44a;--ok:#6fd49a;--okb:rgba(47,125,79,.28);--bad:#ff8a73;--badb:rgba(178,58,38,.3);--glyph:224,180,74}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Lora,Georgia,serif;color:var(--ink);background:linear-gradient(120deg,var(--bg1),var(--bg2),var(--bg1));background-size:300% 300%;animation:drift 28s ease-in-out infinite}
+@keyframes drift{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:28px 16px 60px}
+h1{font-family:Cinzel,serif;font-size:clamp(1.7rem,5vw,2.7rem);margin:.2em 0;color:var(--gold);letter-spacing:.02em;line-height:1.15}
+.sub{color:var(--mut);margin:0 0 18px;max-width:60ch}
+.glyphs{font-size:1.6rem;letter-spacing:.5em;color:var(--gold);opacity:.85}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin:14px 0}
+.stats{display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:.95rem}
+.stats b{color:var(--gold);font-size:1.15rem}
+.prog{flex:1;min-width:120px;height:8px;border-radius:8px;background:var(--line);overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--gold);transition:width .4s}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+button{font:inherit;color:inherit;cursor:pointer}
+.tab,.ut{border:1px solid var(--line);background:transparent;padding:7px 14px;border-radius:999px;font-family:Cinzel,serif;font-size:.85rem}
+.tab[aria-selected="true"],.ut[aria-selected="true"]{background:var(--gold);color:#fff;border-color:var(--gold)}.units{margin:0 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+:root[data-theme="dark"] .tab[aria-selected="true"],:root[data-theme="dark"] .ut[aria-selected="true"]{color:#1a1426}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tab[aria-selected="true"],:root:not([data-theme="light"]) .ut[aria-selected="true"]{color:#1a1426}}
+.reset{margin-left:auto;border:1px solid var(--line);background:transparent;border-radius:999px;padding:7px 14px;font-size:.85rem}
+.q{background:var(--card);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:16px;padding:18px;margin:14px 0}
+.qh{display:flex;gap:12px;align-items:flex-start}
+.n{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--gold);color:var(--gold);font-family:Cinzel,serif;font-weight:700;font-size:.9rem}
+.qt{flex:1;font-size:1.05rem;line-height:1.5;font-weight:600}
+.tr{flex:none;border:1px solid var(--line);background:transparent;border-radius:8px;padding:4px 10px;font-size:.8rem;font-family:'Noto Naskh Arabic',Tahoma,serif}
+.ar{display:none;margin:10px 0 0 46px;padding:8px 12px;border-right:3px solid var(--gold);background:rgba(var(--glyph),.1);border-radius:8px;direction:rtl;text-align:right;font-family:'Noto Naskh Arabic',Tahoma,serif;font-size:1.05rem;line-height:1.7}
+.ar.on{display:block}
+.opts{display:grid;gap:8px;margin:14px 0 0 46px}
+.o{text-align:left;border:1px solid var(--line);background:transparent;border-radius:10px;padding:10px 14px;transition:transform .15s,background .2s,border-color .2s}
+.o:hover:not(:disabled){border-color:var(--gold);transform:translateX(4px)}
+.o:disabled{cursor:default}
+.o.ok{background:var(--okb);border-color:var(--ok)}
+.o.bad{background:var(--badb);border-color:var(--bad);animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.fb{margin:12px 0 0 46px;font-weight:600;display:none}
+.fb.ok{display:block;color:var(--ok)}.fb.bad{display:block;color:var(--bad)}
+.fb span{font-weight:400;color:var(--ink)}
+.ans{margin:14px 0 0 46px;padding:12px 14px;border-radius:10px;background:rgba(var(--glyph),.12);display:none;line-height:1.6}
+.ans.on{display:block}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 0 46px}
+.row .o{margin:0}
+.res{text-align:center;padding:26px;font-family:Cinzel,serif;color:var(--gold);font-size:1.2rem}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media (max-width:560px){.opts,.fb,.ans,.row,.ar{margin-left:0}.qh{flex-wrap:wrap}}
+@media (prefers-reduced-motion:reduce){body{animation:none}.o.bad{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<main>
+<div class="glyphs" aria-hidden="true">☥ 日 Α א ع A</div>
+<h1>History of Visual Communication</h1>
+<p class="sub">From cave walls and clay tablets to alphabets and illuminated manuscripts. Choose an answer to get instant feedback. Press the Arabic button on any card for a translation.</p>
+<div class="bar">
+<div class="stats"><span>Score <b id="sc">0</b> / <span id="an">0</span></span><span>Total <b id="tt">0</b></span><div class="prog"><i id="pg"></i></div></div>
+<div class="tabs" id="tabs" role="tablist"></div>
+</div>
+<section id="list"></section>
+</main>
+<script>
+const MCQ=[
+["Which term means images carved or engraved into rock?","أي مصطلح يعني صوراً منحوتة أو محفورة في الصخر؟",["Petroglyphs","Pictographs","Ideographs","Phonograms"],0],
+["Pictographs are best described as…","تُوصف الصور التصويرية (Pictographs) بأنها…",["Carvings in rock","Painted or drawn symbols of real objects","Symbols for sounds","Symbols for abstract ideas"],1],
+["The Chinese character for “sun” and the Egyptian ankh are examples of…","الحرف الصيني لـ“الشمس” ورمز عنخ المصري أمثلة على…",["Phonograms","Petroglyphs","Ideographs","Uncials"],2],
+["Where did writing first develop, mainly for record keeping (taxes, trade)?","أين تطورت الكتابة أولاً، أساساً لحفظ السجلات (الضرائب والتجارة)؟",["Crete","Mesopotamia","Greece","Ireland"],1],
+["Proto-cuneiform appeared around…","ظهرت المسمارية الأولية حوالي…",["3100 BCE","1500 BCE","800 BCE","200 CE"],0],
+["Sumerians wrote cuneiform on ___ using a reed stylus.","كتب السومريون المسمارية على ___ باستخدام قلم قصب.",["Papyrus","Parchment","Clay tablets","Ivory"],2],
+["The Code of Hammurabi was carved on a…","نُقشت شريعة حمورابي على…",["Clay tablet","Stone stele","Papyrus scroll","Cave wall"],1],
+["“Hieroglyphic” comes from Greek and means…","كلمة “هيروغليفية” يونانية وتعني…",["Sacred carving","Wedge shape","Picture book","Royal law"],0],
+["Hieroglyphs were used for about…","استُخدمت الهيروغليفية لحوالي…",["500 years","1,000 years","3,500 years","10,000 years"],2],
+["The rebus principle means pictures can represent…","مبدأ الريبس يعني أن الصور يمكن أن تمثل…",["Only objects","Sounds or syllables","Only numbers","Colors"],1],
+["Phonograms are symbols that represent…","الرموز الصوتية (Phonograms) تمثل…",["Objects","Ideas","Sounds","Numbers"],2],
+["Papyrus was made from a plant that grew along the…","صُنع البردي من نبات ينمو على ضفاف…",["Tigris","Nile","Euphrates","Jordan"],1],
+["The real name of the Book of the Dead is…","الاسم الحقيقي لكتاب الموتى هو…",["Chapters of Coming Forth by Day","Spells of the Nile","Book of the Gods","Scroll of Judgment"],0],
+["The word “alphabet” comes from the Greek letters…","كلمة “alphabet” تأتي من الحرفين اليونانيين…",["Alpha and Beta","Alpha and Omega","Beta and Gamma","Delta and Sigma"],0],
+["The Phaistos Disk (c. 2000 BCE) from Crete is…","قرص فايستوس (حوالي 2000 ق.م) من كريت هو…",["A deciphered alphabet","An undeciphered early movable-type idea","A Roman inscription","A Celtic manuscript"],1],
+["The Phoenician alphabet had 30 symbols that were…","احتوت الأبجدية الفينيقية على 30 رمزاً كانت…",["Vowels only","Consonants only, written right to left","Pictures","Written left to right"],1],
+["What major improvement did the Greeks add to the Phoenician alphabet?","ما التحسين الرئيسي الذي أضافه اليونانيون للأبجدية الفينيقية؟",["Vowels","Wedge shapes","Pictographs","Serifs"],0],
+["Who created the letter G in the Latin alphabet (250 BCE)?","من ابتكر حرف G في الأبجدية اللاتينية (250 ق.م)؟",["Spurius Carvilius","Hammurabi","Aspalta","Zet"],0],
+["The original Latin alphabet had how many letters?","كم حرفاً كانت في الأبجدية اللاتينية الأصلية؟",["21","24","26","30"],0],
+["Uncials and half-uncials were…","الأنسيال ونصف الأنسيال كانت…",["Rounded, easy-to-write scripts","Wedge-shaped signs","Egyptian sound signs","Black-letter scripts"],0],
+["The Book of Kells dates to…","يعود كتاب كيلز إلى…",["680 CE","698 CE","794–806 CE","1150 CE"],2],
+["Insular script was the Irish version of…","الخط الجزري (Insular) هو النسخة الأيرلندية من…",["Half-uncials","Cuneiform","Textura","Hieroglyphs"],0],
+["Which statement about Gothic manuscripts (1150–1400 CE) is correct?","أي عبارة عن المخطوطات القوطية (1150–1400م) صحيحة؟",["Flat, heavy, symbolic figures","More natural and elegant, with everyday scenes","Only geometric patterns","No decoration at all"],1],
+["What mainly characterizes Islamic illuminated manuscripts?","ما الميزة الأبرز للمخطوطات الإسلامية المزخرفة؟",["Calligraphy with geometric and floral designs","Realistic portraits only","Celtic knots","Carpet pages with animals"],0],
+["Neolithic humans are known for…","يُعرف إنسان العصر الحجري الحديث بـ…",["Nomadic hunting","Farming and settling in villages","Cave painting only","Inventing the alphabet"],1],
+["Celtic book production ended after…","انتهى إنتاج الكتب الكلتية بعد…",["The fall of Rome","Viking invasions of Iona and Lindisfarne","The invention of printing","Greek influence"],1],
+["Visual communication conveys messages mainly through…","ينقل التواصل البصري الرسائل أساساً عبر…",["Images, symbols, colors, typography, and design","Spoken words only","Sounds only","Numbers only"],0],
+["Early humans made cave-painting pigments from…","صنع الإنسان القديم أصباغ رسومات الكهوف من…",["Charcoal, ochres, and minerals","Gold leaf","Printer ink","Plant dyes only"],0],
+["The Lascaux cave painting dates to about…","تعود رسومات كهف لاسكو إلى حوالي…",["15,000–10,000 BCE","3100 BCE","1500 BCE","700 CE"],0],
+["“Mesopotamia” means…","كلمة “بلاد الرافدين” تعني…",["Land between rivers","Land of the sun","Sacred valley","Island of clay"],0],
+["Who controlled the written records in Sumerian society?","من تحكّم بالسجلات المكتوبة في المجتمع السومري؟",["Farmers","Temples","Soldiers","Sailors"],1],
+["The Mesolithic Age (c. 10,000–8,000 BCE) was…","كان العصر الحجري الوسيط (حوالي 10,000–8,000 ق.م)…",["A transitional phase from hunting to early farming","The age of the alphabet","The age of printing","The age of cities"],0],
+["The Ivory Tablet of King Zet (First Dynasty) is an early example of writing from…","لوح العاج للملك زِت (الأسرة الأولى) مثال مبكر على الكتابة من…",["Sumer","Egypt","Crete","Ireland"],1],
+["In Egyptian writing, the owl hieroglyph stood for the sound…","في الكتابة المصرية، كان رمز البومة يمثل الصوت…",["“m”","“s”","“a”","“k”"],0],
+["Papyrus stems were used to make…","استُخدمت سيقان البردي لصنع…",["Paper, mats, ropes, sails, and sandals","Only fuel","Only temple decorations","Clay"],0],
+["The purpose of Egypt’s first illustrated books was to…","كان الغرض من أولى الكتب المصورة في مصر…",["Record taxes","Explain life after death and the judgment of the soul","Teach farming","Show maps"],1],
+["About 135 pictographs of the Minoan civilization survive on…","يبقى حوالي 135 رمزاً تصويرياً من الحضارة المينوية على جزيرة…",["Cyprus","Crete","Sicily","Rhodes"],1],
+["The Ras Shamra script was written with…","كُتبت نصوص رأس شمرا باستخدام…",["A wedge stylus on clay tablets","Ink on papyrus","A brush on silk","A chisel on marble"],0],
+["The Aramaic alphabet originated among the…","نشأت الأبجدية الآرامية لدى…",["Tribes of Aram (modern Syria)","Romans","Celts","Minoans"],0],
+["Roman inscriptions were designed using simple shapes such as…","صُممت النقوش الرومانية باستخدام أشكال بسيطة مثل…",["Squares, triangles, and circles","Spirals and knots","Wedges","Animals"],0],
+["How many scrolls were lost when the Library of Alexandria was destroyed?","كم لفافة فُقدت عند تدمير مكتبة الإسكندرية؟",["7,000","70,000","700,000","7,000,000"],2],
+["The Lindisfarne Gospels date to…","يعود إنجيل ليندسفارن إلى…",["680 CE","698 CE","794 CE","1000 CE"],1],
+["In Celtic books, “diminuendo” refers to…","في الكتب الكلتية، يشير “ديمينوندو” إلى…",["Text size gradually decreasing","Gold leaf","Spaces between words","Carpet pages"],0],
+["The word “Romanesque” means…","كلمة “رومانسك” تعني…",["Roman-like","Gothic-like","Celtic","Realistic"],0],
+["Illuminated manuscripts were mainly produced in…","أُنتجت المخطوطات المزخرفة بشكل رئيسي في…",["Monasteries (scriptoria)","Marketplaces","Palaces only","Caves"],0]
+];
+const TF=[
+["Petroglyphs are painted on cave walls.","الصخريات المنحوتة (Petroglyphs) تُرسم على جدران الكهوف.",0,"Petroglyphs are carved, pecked, or engraved into rock; painted images are pictographs."],
+["Pictographs are among the earliest forms of visual storytelling.","الصور التصويرية من أقدم أشكال السرد البصري.",1],
+["Cuneiform gradually evolved from pictures into abstract signs.","تطورت المسمارية تدريجياً من صور إلى رموز مجردة.",1],
+["Egyptians kept picture-based writing while Sumerians used abstract wedge shapes.","احتفظ المصريون بالكتابة التصويرية بينما استخدم السومريون أشكالاً إسفينية مجردة.",1],
+["Hieroglyphs could only be written from left to right.","كانت الهيروغليفية تُكتب من اليسار إلى اليمين فقط.",0,"They could be written across or up and down, in either direction, following the way figures faced."],
+["The Phoenician alphabet included vowel symbols.","احتوت الأبجدية الفينيقية على رموز للحروف المتحركة.",0,"It had consonants only; the Greeks added vowels."],
+["The Greeks added vowels to the Phoenician alphabet.","أضاف اليونانيون الحروف المتحركة إلى الأبجدية الفينيقية.",1],
+["The Code of Hammurabi was written on a small clay tablet.","كُتبت شريعة حمورابي على لوح طيني صغير.",0,"It was carved on a stone stele."],
+["In early writing systems, only priests and scribes could read and write.","في أنظمة الكتابة المبكرة، كان الكهنة والكتبة فقط يقرؤون ويكتبون.",1],
+["The alphabet made reading and writing available to more people, not just elites.","جعلت الأبجدية القراءة والكتابة متاحة لعدد أكبر، لا للنخبة فقط.",1],
+["The Book of Kells mixes Christian themes with Celtic knots and interlace patterns.","يمزج كتاب كيلز بين المواضيع المسيحية والعُقد والزخارف الكلتية المتشابكة.",1],
+["Celtic manuscripts innovated by leaving spaces between words.","ابتكرت المخطوطات الكلتية ترك مسافات بين الكلمات.",1],
+["Islamic manuscripts mostly featured figurative images.","غالباً ما تضمنت المخطوطات الإسلامية صوراً تجسيدية.",0,"Figurative images were mostly avoided; calligraphy, geometric and floral designs dominated."],
+["The Paleolithic age was based on farming and permanent villages.","قام العصر الحجري القديم على الزراعة والقرى الدائمة.",0,"Paleolithic people hunted and gathered and lived nomadically; farming marks the Neolithic."],
+["Y and Z were added to the Latin alphabet for Greek words.","أُضيف حرفا Y وZ إلى اللاتينية للكلمات اليونانية.",1],
+["Papyrus allowed the creation of scrolls and manuscripts.","سمح البردي بصناعة اللفائف والمخطوطات.",1],
+["Romanesque art (1000–1150 CE) was more realistic than Gothic art.","كان الفن الرومانسكي أكثر واقعية من الفن القوطي.",0,"Romanesque was flat, heavy, and symbolic; Gothic was more natural and realistic."],
+["The Phaistos Disk is a direct ancestor of modern alphabets.","قرص فايستوس سلف مباشر للأبجديات الحديثة.",0,"It is not a direct ancestor; it only shows early visual symbols and remains undeciphered."],
+["Writing helps overcome the limits of memory.","تساعد الكتابة على تجاوز حدود الذاكرة.",1],
+["The Aramaic alphabet was written from left to right.","كُتبت الأبجدية الآرامية من اليسار إلى اليمين.",0,"Aramaic had 22 consonant letters and was written right to left."],
+["In the Lascaux cave painting, random placement and shifting scale show a lack of structure and sequence.","في رسم كهف لاسكو، يدل التوزيع العشوائي وتغيّر الحجم على غياب البنية والتسلسل.",1],
+["The Neolithic (New Stone Age) is dated c. 8,000–3,000 BCE.","يُؤرَّخ العصر الحجري الحديث بحوالي 8,000–3,000 ق.م.",1],
+["Mesopotamia means the land between the Nile and the Jordan.","بلاد الرافدين تعني الأرض بين النيل والأردن.",0,"It means the land between the Tigris and Euphrates rivers."],
+["Early Sumerian tablets organized information into grid zones.","نظّمت الألواح السومرية المبكرة المعلومات في مناطق شبكية.",1],
+["Priests kept hieroglyphs secret, so Greek and Roman scholars thought they were magical symbols.","أبقى الكهنة الهيروغليفية سراً، فظن علماء اليونان والرومان أنها رموز سحرية.",1],
+["In hieroglyphs, an owl picture could stand for the sound “m”.","في الهيروغليفية، يمكن لصورة البومة أن تمثل الصوت “m”.",1],
+["Papyrus roots were used as decorations for temples.","استُخدمت جذور البردي كزينة للمعابد.",0,"The flowers were used for temple decorations; roots were used for fuel and utensils."],
+["The Book of the Dead contained spells, stories, and illustrations to guide the soul to the afterlife.","احتوى كتاب الموتى على تعاويذ وقصص ورسوم لإرشاد الروح إلى الآخرة.",1],
+["The Romans borrowed Greek letters through the Etruscans.","اقترض الرومان الحروف اليونانية عبر الأتروسكان.",1],
+["Roman letter designers ignored the spaces inside and between letters.","تجاهل مصممو الحروف الرومانية المساحات داخل الحروف وبينها.",0,"They paid careful attention to the spaces inside and between letters."],
+["Many Greek and Roman illustrated books survived to the present day.","نجا عدد كبير من الكتب اليونانية والرومانية المصورة حتى اليوم.",0,"Few survived."],
+["Illuminated manuscripts were small and portable, which helped knowledge spread.","كانت المخطوطات المزخرفة صغيرة ومحمولة مما ساعد على نشر المعرفة.",1],
+["The early Christian manuscript style focused on realism rather than faith.","ركّز أسلوب المخطوطات المسيحية المبكرة على الواقعية لا على الإيمان.",0,"It focused on faith, not realism."]
+];
+const TERMS=[
+["Visual communication","التواصل البصري","Conveying ideas, information, or emotions through visual elements such as images, symbols, colors, typography, and design rather than words alone.","نقل الأفكار أو المعلومات أو المشاعر عبر عناصر بصرية كالصور والرموز والألوان والخطوط والتصميم وليس بالكلمات فقط."],
+["Petroglyph","الصخريات المنحوتة","An image carved, pecked, or engraved into a rock surface. Key word: carved into rock.","صورة منحوتة أو محفورة على سطح صخري. الكلمة المفتاحية: منحوتة في الصخر."],
+["Pictograph","الصورة التصويرية","A drawn or painted symbol representing a real object such as a person, animal, or tool. Key word: painted picture.","رمز مرسوم أو ملون يمثل شيئاً حقيقياً كإنسان أو حيوان أو أداة. الكلمة المفتاحية: صورة مرسومة."],
+["Ideograph","الرمز الفكري","A symbol that represents an idea or concept, not just an object (e.g., the ankh for “life”).","رمز يمثل فكرة أو مفهوماً لا مجرد شيء (مثل عنخ لـ“الحياة”)."],
+["Phonogram","الرمز الصوتي","A symbol that represents a sound rather than a whole word or idea, like a letter in our alphabet.","رمز يمثل صوتاً وليس كلمة أو فكرة كاملة، مثل الحرف في أبجديتنا."],
+["Cuneiform","المسمارية","Sumerian wedge-shaped writing pressed into clay tablets with a reed stylus; it began as pictographs (c. 3100 BCE).","كتابة سومرية إسفينية تُضغط على ألواح الطين بقلم قصب؛ بدأت كصور تصويرية (حوالي 3100 ق.م)."],
+["Hieroglyphics","الهيروغليفية","Egyptian picture-based writing, from Greek meaning “sacred carving”, used for about 3,500 years.","كتابة مصرية قائمة على الصور، من اليونانية بمعنى “النقش المقدس”، استُخدمت نحو 3500 سنة."],
+["Rebus principle","مبدأ الريبس","Using pictures to represent sounds or syllables instead of ideas (e.g., “Bee + Leaf” = “Belief”).","استخدام الصور لتمثيل الأصوات أو المقاطع بدل الأفكار (مثل نحلة + ورقة = Belief)."],
+["Alphabet","الأبجدية","A system of about 20–30 letters representing sounds; the word comes from Greek alpha + beta.","نظام من نحو 20–30 حرفاً يمثل الأصوات؛ الكلمة من اليونانية ألفا + بيتا."],
+["Illuminated manuscript","المخطوطة المزخرفة","A hand-decorated book with gold or silver leaf that made pages seem to glow, made mostly in monasteries (scriptoria).","كتاب مزخرف يدوياً بأوراق الذهب أو الفضة تجعل الصفحات تبدو متوهجة، صُنع غالباً في الأديرة."],
+["Uncials and half-uncials","الأنسيال ونصف الأنسيال","Rounded, easy-to-write scripts used by early Christian monasteries.","خطوط مستديرة سهلة الكتابة استخدمتها الأديرة المسيحية المبكرة."],
+["Insular script","الخط الجزري","The Irish version of half-uncials developed in Celtic monasteries.","النسخة الأيرلندية من نصف الأنسيال التي تطورت في الأديرة الكلتية."],
+["Papyrus","البردي","A writing material made from the papyrus plant growing along the Nile; it allowed scrolls and manuscripts.","مادة للكتابة تُصنع من نبات البردي على ضفاف النيل؛ سمحت بصناعة اللفائف والمخطوطات."],
+["Stele","المسلّة (اللوح الحجري)","An upright stone slab carved with text or images, such as the stele of the Code of Hammurabi.","لوح حجري قائم منقوش بنص أو صور، مثل مسلّة شريعة حمورابي."],
+["Stylus","القلم (الأداة الكتابية)","A pointed reed tool pressed into wet clay to make cuneiform signs.","أداة قصب مدببة تُضغط على الطين الرطب لصنع العلامات المسمارية."],
+["Mesopotamia","بلاد الرافدين","The “land between rivers” (Tigris and Euphrates), a cradle of civilization where agriculture, the wheel, and writing appeared.","“الأرض بين النهرين” (دجلة والفرات)، مهد الحضارة حيث ظهرت الزراعة والعجلة والكتابة."],
+["Scriptorium","غرفة النسخ (سكريبتوريوم)","A monastery workshop where teams of scribes and artists produced hand-made books.","ورشة في الدير ينتج فيها فريق من النساخ والفنانين كتباً مصنوعة يدوياً."],
+["Carpet page","الصفحة السجادية","A fully decorated page of interlace and bright color, typical of Celtic manuscripts.","صفحة مزخرفة بالكامل بزخارف متشابكة وألوان زاهية، مميزة للمخطوطات الكلتية."],
+["Diminuendo","التناقص التدريجي","A Celtic manuscript device in which text size gradually decreases.","أسلوب في المخطوطات الكلتية يتناقص فيه حجم النص تدريجياً."],
+["Textura","خط تكستورا (الخط القوطي الأسود)","The black-letter script used in the Romanesque and Gothic periods.","الخط الأسود الكثيف المستخدم في العصرين الرومانسكي والقوطي."]
+];
+const ESSAY=[
+["Explain why humans invented writing.","اشرح لماذا اخترع الإنسان الكتابة.","Writing is the visual counterpart of speech. People invented it to overcome the limits of memory, to preserve information across time and place (speech vanishes but writing lasts), and to record knowledge, experiences, and thoughts so civilization could grow. It evolved from early pictures into written language."],
+["Trace the evolution of cuneiform and its uses.","تتبّع تطور الكتابة المسمارية واستخداماتها.","Around 3100 BCE the Sumerians created proto-cuneiform pictographs on clay tablets. Pictures were gradually simplified into symbols and then abstract wedge signs made with a reed stylus; about 560 signs became fewer phonetic symbols. It recorded taxes, food storage, trade, law, and administration, and temples controlled the records."],
+["Compare Sumerian cuneiform with Egyptian hieroglyphics.","قارن بين المسمارية السومرية والهيروغليفية المصرية.","Sumerians used abstract wedge shapes pressed into clay, while Egyptians kept picture-based signs (hieroglyphs, “sacred carving”) on stone and papyrus. Both were complex, so only priests and scribes could use them. Hieroglyphs also used phonograms and the rebus principle, and could be written in several directions."],
+["Explain the rebus principle and the difference between pictograms, ideograms, and phonograms.","اشرح مبدأ الريبس والفرق بين الصور والرموز الفكرية والرموز الصوتية.","The rebus principle lets pictures stand for sounds or syllables (“Bee + Leaf” = “Belief”). A pictogram represents an object (sun), an ideogram an idea (love), and a phonogram a sound (“m”), like an alphabet letter. The progression moves from picture to concept to sound."],
+["Describe how the alphabet developed from the Phoenicians to the Latin alphabet and why it mattered.","صف تطور الأبجدية من الفينيقيين إلى اللاتينية وأهميتها.","Phoenicians and Canaanites created a 30-symbol consonant-only script written right to left; Aramaic and Hebrew descended from it, and Aramaic led to Arabic. The Greeks added vowels, and the Romans borrowed Greek letters via the Etruscans, adding G, Y, Z, and later J, U, W for 26 letters. The alphabet made writing easy and democratic, reduced religious control, and spread education, art, and science."],
+["Discuss illuminated manuscripts: their purpose and the main regional styles.","ناقش المخطوطات المزخرفة: غرضها وأبرز أساليبها الإقليمية.","They were hand-decorated books made in monasteries to preserve religion, knowledge, and education. Early Christian styles used uncials; Celtic books (Durrow, Lindisfarne, Kells) used interlace, carpet pages, ornate initials, and word spacing; Romanesque art was flat and symbolic, Gothic more natural with everyday scenes; Islamic manuscripts stressed calligraphy and geometric and floral designs."],
+["Describe prehistoric visual communication and explain the main differences between the Paleolithic and Neolithic ages.","صف التواصل البصري في عصور ما قبل التاريخ واشرح الفروق الرئيسية بين العصرين الحجري القديم والحديث.","Early humans painted animals on cave walls with charcoal, ochres, and minerals for survival, rituals, and communication, and carved petroglyphs into rock. Paleolithic people (c. 2.5 million–10,000 BCE) hunted, gathered, and were nomadic; the Mesolithic was a transition; Neolithic people (c. 8,000–3,000 BCE) farmed, settled in villages, and developed culture, trade, and technology."],
+["Why is Mesopotamia called the Cradle of Civilization, and what was writing first used for there?","لماذا تُسمى بلاد الرافدين مهد الحضارة، ولأي غرض استُخدمت الكتابة فيها أولاً؟","Mesopotamia, the land between the Tigris and Euphrates, had agriculture from around 8000 BCE and saw the invention of the wheel, tools, and writing. Writing first served record keeping: taxes, food storage, and trade, with temples controlling the records."],
+["Discuss Egypt’s contributions to visual communication.","ناقش إسهامات مصر في التواصل البصري.","Egyptians kept picture-based hieroglyphs for about 3,500 years, used phonograms and the rebus principle, and wrote in flexible directions. They invented papyrus from the Nile plant, enabling scrolls, and created the first illustrated books such as the Book of the Dead, which combined text and pictures to guide the soul after death."],
+["Describe the main features of Celtic book design.","صف السمات الرئيسية لتصميم الكتب الكلتية.","Works such as the Book of Durrow (680 CE), Lindisfarne Gospels (698 CE), and Book of Kells (794–806 CE) mixed Christian themes with Celtic knots and interlace. They used vivid colors, carpet pages, ornate initials, diminuendo, Insular script, and spaces between words. The tradition ended after Viking invasions destroyed monasteries such as Iona and Lindisfarne."]
+];
+const MCQ2=[
+["Xylography is best defined as…","تُعرَّف الزيلوغرافي (Xylography) بأنها…",["Relief printing from a raised wooden surface (woodblock)","Printing with movable metal letters","Handwriting on parchment","Carving images into rock"],0],
+["Typography is best defined as…","تُعرَّف الطباعة بالحروف (Typography) بأنها…",["Printing from one carved wooden block","Printing with independent, movable metal or wood letters","Painting on cave walls","Writing with a reed stylus"],1],
+["In xylography, the printing unit is…","وحدة الطباعة في الزيلوغرافي هي…",["Each single letter","A whole page or image carved on one block","A clay tablet","A metal mold"],1],
+["In typography, the printing unit is…","وحدة الطباعة في التيبوغرافي هي…",["A whole page on one block","Each letter as a separate, reusable piece","A papyrus scroll","A woodcut illustration only"],1],
+["The material of xylography is…","مادة الزيلوغرافي هي…",["Wood blocks","Metal type","Clay","Stone"],0],
+["Typography used mostly…","تستخدم الطباعة بالحروف غالباً…",["Wood blocks only","Metal (usually) or wood type","Linoleum","Papyrus"],1],
+["Why is xylography very hard to edit?","لماذا يصعب التعديل في الزيلوغرافي جداً؟",["The block must be recarved","The ink dries too fast","Letters fall out","Paper is too thin"],0],
+["How is text edited in typography?","كيف يُعدَّل النص في الطباعة بالحروف؟",["By recarving the whole block","By rearranging or replacing letters","By repainting the page","It cannot be edited"],1],
+["Which method is much faster because the same letters are reused for many pages and books?","أي طريقة أسرع بكثير لأن الحروف نفسها تُستخدم لصفحات وكتب كثيرة؟",["Xylography","Typography","Handwriting","Cave painting"],1],
+["Which is cheaper for large quantities because type can be reused?","أيهما أرخص للكميات الكبيرة بسبب إعادة استخدام الحروف؟",["Typography","Xylography","Both cost the same","Neither"],0],
+["Why is xylography more expensive per page?","لماذا الزيلوغرافي أغلى لكل صفحة؟",["Labor-intensive carving","Gold ink","Rare paper","Taxes"],0],
+["Xylography originated in…","نشأت الزيلوغرافي في…",["Europe","Asia","Africa","America"],1],
+["Typography was developed in Europe in…","تطورت الطباعة بالحروف في أوروبا في…",["The mid-1400s","The 1100s","The 1700s","1900"],0],
+["The historical impact of typography was…","الأثر التاريخي للطباعة بالحروف كان…",["An early step in printing images only","A major revolution in book production that spread knowledge and literacy","The end of writing","Limited to religious cards"],1],
+["Printing in Europe depended on paper that spread from…","اعتمدت الطباعة في أوروبا على ورق انتشر من…",["China to the Arab world to Europe","Egypt to Rome","Greece to China","India to Ireland"],0],
+["European woodblock printing was first used for…","استُخدمت الطباعة الخشبية في أوروبا أولاً لـ…",["Playing cards and cheap religious images","Bibles","Law codes","Maps"],0],
+["In block printing, which parts of the block print?","في الطباعة بالقوالب، أي أجزاء القالب هي التي تطبع؟",["The raised (uncarved) parts","The carved-away parts","Only the edges","The back"],0],
+["“Block books” are books in which…","“كتب القوالب” هي كتب…",["Each whole page (image + text) was carved on one block","Every letter is cast separately","Pages are handwritten","Only images are printed"],0],
+["“Ars Moriendi” means…","“آرس موريندي” تعني…",["Art of Dying","Book of Saints","Art of Memory","Poor Man’s Bible"],0],
+["Biblia Pauperum and Ars Memorandi showed…","عرض كتابا Biblia Pauperum وArs Memorandi…",["Stories from the life of Christ and religious figures","Laws and punishments","Maps of trade routes","Farming methods"],0],
+["Who is considered the first to create a full, workable typographic printing system (c. 1450)?","من يُعتبر أول من ابتكر نظام طباعة بالحروف متكاملاً وعملياً (حوالي 1450)؟",["Johann Gutenberg in Mainz","Coster in Holland","Waldfoghel in France","Peter Schoeffer"],0],
+["Gutenberg’s 42-line Bible had about…","احتوى إنجيل غوتنبرغ ذو الـ42 سطراً على حوالي…",["1,282 pages in two volumes","100 pages","5,000 pages","One volume of 50 pages"],0],
+["Who took Gutenberg’s equipment and the nearly finished Bible?","من استولى على معدات غوتنبرغ والإنجيل شبه المكتمل؟",["Johann Fust","Peter Schoeffer","Coster","Spurius Carvilius"],0],
+["Peter Schoeffer was…","كان بيتر شوفر…",["Gutenberg’s assistant who partnered with Fust","A Roman emperor","An Egyptian scribe","A Celtic monk"],0],
+["In Gutenberg’s casting system, the steel punch is stamped into a…","في نظام السبك عند غوتنبرغ، يُطبع القالب الفولاذي (Punch) في…",["Softer brass matrix","Clay tablet","Wooden block","Papyrus"],0],
+["The 1454 printed documents imitating handwriting were…","المطبوعات عام 1454 التي قلّدت الخط اليدوي كانت…",["Indulgence letters","Playing cards","Maps","Calendars of Egypt"],0],
+["Every xylograph is…","كل عمل زيلوغرافي هو…",["Block printing","Movable type","A manuscript","A petroglyph"],0]
+];
+const TF2=[
+["Xylography originated in Europe.","نشأت الزيلوغرافي في أوروبا.",0,"It originated in Asia; typography developed in Europe."],
+["In xylography, a whole page or image is carved on one block.","في الزيلوغرافي تُنحت صفحة أو صورة كاملة على قالب واحد.",1],
+["In typography, each letter is a separate, reusable piece.","في الطباعة بالحروف كل حرف قطعة منفصلة قابلة لإعادة الاستخدام.",1],
+["Xylography is easy to edit.","الزيلوغرافي سهلة التعديل.",0,"It is very hard to edit because the block must be recarved."],
+["Typography allows text to be edited by rearranging or replacing letters.","تتيح الطباعة بالحروف تعديل النص بإعادة ترتيب الحروف أو استبدالها.",1],
+["Xylography is faster than typography.","الزيلوغرافي أسرع من الطباعة بالحروف.",0,"Xylography is slow because each page is carved as a block; typography is much faster."],
+["Typography is cheaper for large quantities because type can be reused.","الطباعة بالحروف أرخص للكميات الكبيرة لأن الحروف تُعاد استخدامها.",1],
+["Xylography usually uses metal type.","تستخدم الزيلوغرافي عادةً حروفاً معدنية.",0,"It uses wood blocks; metal (usually) or wood type belongs to typography."],
+["Typography was developed in Europe in the mid-1400s.","تطورت الطباعة بالحروف في أوروبا في منتصف القرن الخامس عشر.",1],
+["Typography became a major revolution in book production, spreading knowledge and literacy.","أصبحت الطباعة بالحروف ثورة كبرى في إنتاج الكتب ونشرت المعرفة والقراءة.",1],
+["Paper spread from China to the Arab world and then to Europe.","انتشر الورق من الصين إلى العالم العربي ثم إلى أوروبا.",1],
+["Woodblock printing in Europe was first used for playing cards and cheap religious images.","استُخدمت الطباعة الخشبية في أوروبا أولاً لأوراق اللعب والصور الدينية الرخيصة.",1],
+["In block printing, the carved-away parts are the ones that print.","في الطباعة بالقوالب، الأجزاء المحفورة هي التي تطبع.",0,"The raised (uncarved) parts print; carved-away parts stay white."],
+["Every block print is xylography.","كل طباعة بالقوالب هي زيلوغرافي.",0,"Every xylograph is block printing, but a block might be linoleum or rubber, so not every block print is xylography."],
+["Block books used simple, comic-style pictures to teach people who could not read.","استخدمت كتب القوالب صوراً بسيطة بأسلوب كاريكاتيري لتعليم من لا يقرؤون.",1],
+["Ars Moriendi also acted as early Church propaganda, telling the dying to leave property to the Church.","كان آرس موريندي أيضاً دعاية مبكرة للكنيسة يحث المحتضرين على ترك ممتلكاتهم لها.",1],
+["Gutenberg repaid Fust and kept his press and Bible.","سدّد غوتنبرغ دينه لفوست واحتفظ بمطبعته وإنجيله.",0,"He could not repay, so Fust took his equipment and the nearly finished Bible."],
+["Fust and Peter Schoeffer completed the Bible and built the leading early printing house in Europe.","أكمل فوست وبيتر شوفر الإنجيل وبنيا أبرز دار طباعة مبكرة في أوروبا.",1],
+["Gutenberg’s type was cast in a two-part mold filled with molten lead alloy.","سُبكت حروف غوتنبرغ في قالب من جزأين مملوء بسبيكة رصاص منصهرة.",1],
+["The first typographic prints included indulgence letters that imitated handwriting.","شملت أولى المطبوعات بالحروف صكوك الغفران التي قلّدت الخط اليدوي.",1],
+["The 42-line Bible left spaces for hand-drawn initials.","ترك إنجيل الـ42 سطراً فراغات للحروف الاستهلالية المرسومة يدوياً.",1],
+["Typography is almost as important as the invention of writing.","تُعدّ الطباعة بالحروف مهمة تقريباً بقدر اختراع الكتابة.",1]
+];
+const TERMS2=[
+["Xylography","الزيلوغرافي (الطباعة الخشبية)","Relief printing from a raised wooden surface; the art of carving images or text on wood blocks and printing from them. It started in Asia.","طباعة بارزة من سطح خشبي مرتفع؛ فن نحت الصور أو النصوص على قوالب خشبية والطباعة منها. بدأت في آسيا."],
+["Typography","الطباعة بالحروف","Printing with separate, movable metal or wood pieces, each with one raised letter on its face; invented in mid-1400s Europe.","الطباعة بقطع منفصلة متحركة من المعدن أو الخشب، على كل منها حرف بارز؛ اخترعت في أوروبا منتصف القرن الخامس عشر."],
+["Relief printing","الطباعة البارزة","A method in which the raised parts of a surface hold the ink and print, while carved-away parts stay white.","طريقة تحمل فيها الأجزاء البارزة الحبر وتطبع بينما تبقى الأجزاء المحفورة بيضاء."],
+["Block printing","الطباعة بالقوالب","A general term for printing from any carved block (wood, linoleum, rubber) onto paper or fabric: carve, ink the raised parts, press.","مصطلح عام للطباعة من أي قالب منحوت (خشب أو لينوليوم أو مطاط) على ورق أو قماش: ينحت، يُحبَّر البارز، ثم يُضغط."],
+["Block book","كتاب القوالب","A book in which each whole page (image and text) was carved on one wood block and printed as one unit.","كتاب نُحتت فيه كل صفحة كاملة (صورة ونص) على قالب خشبي واحد وطُبعت كوحدة واحدة."],
+["Movable type","الحروف المتحركة","Separate, reusable pieces of metal or wood, each carrying one raised letter, that can be rearranged to print any text.","قطع منفصلة قابلة لإعادة الاستخدام من المعدن أو الخشب، تحمل كل منها حرفاً بارزاً، ويمكن إعادة ترتيبها لطباعة أي نص."],
+["Ars Moriendi","آرس موريندي (فن الموت)","“Art of Dying”: a block book teaching people how to face death and also early Church propaganda.","“فن الموت”: كتاب قوالب يعلّم كيفية مواجهة الموت وكان أيضاً دعاية مبكرة للكنيسة."],
+["Biblia Pauperum","إنجيل الفقراء","A block book showing stories from the life of Christ with strong woodcut images, aimed at people who could not read.","كتاب قوالب يعرض قصصاً من حياة المسيح بصور خشبية قوية لمن لا يقرؤون."],
+["Punch","القالب الفولاذي (البنش)","A steel tool used to stamp the letterform into a softer brass matrix in Gutenberg’s system.","أداة فولاذية تُستخدم لطبع شكل الحرف في قالب نحاسي أطرى في نظام غوتنبرغ."],
+["Matrix","المصفوفة (القالب النحاسي)","The brass piece holding the impression of a letter; it is slipped into the type mold, which is filled with molten lead alloy.","القطعة النحاسية التي تحمل انطباع الحرف؛ تُدخل في قالب الحروف الذي يُملأ بسبيكة الرصاص المنصهرة."],
+["Indulgence letters","صكوك الغفران","Documents printed in large numbers in 1454, among the first typographic prints, imitating handwriting.","وثائق طُبعت بأعداد كبيرة عام 1454، من أولى المطبوعات بالحروف، قلّدت الخط اليدوي."],
+["Watermark","العلامة المائية","A mark that developed in European papermaking centers, helping provide a plentiful, standardized paper for printed books.","علامة تطورت في مراكز صناعة الورق الأوروبية ساعدت على توفير ورق وفير وموحّد للكتب المطبوعة."]
+];
+const ESSAY2=[
+["Compare xylography and typography in terms of definition, printing unit, material, editing, speed, cost, origin, and historical impact.","قارن بين الزيلوغرافي والتيبوغرافي من حيث التعريف ووحدة الطباعة والمادة والتعديل والسرعة والتكلفة والأصل والأثر التاريخي.","Xylography is relief printing from a raised woodblock; typography prints with independent movable metal or wood letters. Xylography carves a whole page on one block, while typography uses separate reusable letters. Xylography uses wood blocks; typography uses metal (usually) or wood type. Xylography is very hard to edit (the block must be recarved), typography is easy to edit. Xylography is slow and costly per page because of labor-intensive carving; typography is much faster and cheaper for large quantities. Xylography originated in Asia, typography in Europe in the mid-1400s. Xylography was an early step in printing images and texts; typography was a major revolution that spread knowledge and literacy."],
+["Why is typography considered one of the greatest advances in civilization?","لماذا تُعدّ الطباعة بالحروف من أعظم تقدّمات الحضارة؟","Invented in mid-1400s Europe, it made books much cheaper and faster than handwritten manuscripts. Spread of knowledge was quick and literacy increased. It is described as almost as important as the invention of writing. It was possible because paper had spread from China to the Arab world and Europe, giving plentiful, standardized material."],
+["Explain how block printing works and the relationship between xylography and block printing.","اشرح كيف تعمل الطباعة بالقوالب والعلاقة بين الزيلوغرافي والطباعة بالقوالب.","A design is carved into a block (usually wood, sometimes metal or linoleum); the raised uncarved parts will print and carved-away parts stay white. Ink is rolled on the raised surface and the block is pressed onto paper or fabric. Xylography is the specific art of carving and printing from wood blocks, so every xylograph is block printing, but not every block print is xylography."],
+["Describe religious block books: their purpose and main examples.","صف كتب القوالب الدينية: غرضها وأبرز أمثلتها.","Woodblock printing reached Europe from the East, first for playing cards and cheap religious images for ordinary, often illiterate people. These evolved into simple religious block books with full-page woodcuts and short texts, using comic-style pictures to teach about death and sin. Ars Moriendi taught how to face death but also urged the dying to leave property to the Church. Biblia Pauperum and Ars Memorandi showed the life of Christ and religious figures with woodcuts and added watercolor."],
+["Explain Gutenberg’s role and the story of the 42-line Bible.","اشرح دور غوتنبرغ وقصة إنجيل الـ42 سطراً.","Printers such as Coster in Holland and Waldfoghel in France experimented with movable type, but Gutenberg in Mainz (c. 1450) created the first full workable system, casting type with a steel punch, brass matrix, and molten lead alloy. He borrowed heavily from Johann Fust to print the 42-line Bible (about 1,282 pages in two volumes, with ligatures and spaces for hand-drawn initials) but could not repay, so Fust took his equipment and the nearly finished Bible. Fust partnered with Peter Schoeffer, completed it, and their firm became the leading early printing house."],
+["Describe the early typographic prints and the graphic arts craftsmen involved in book production.","صف أولى المطبوعات بالحروف والحرفيين المشاركين في إنتاج الكتاب.","The first typographic prints included poems, calendars, Latin grammars, and especially the 1454 indulgence letters, printed in large numbers and imitating handwriting. Book production involved many graphic arts craftsmen, such as papermakers, type casters, compositors, printers, and binders, working together in the printing workshop."]
+];
+const $=s=>document.querySelector(s),L=$("#list");
+let tab="mcq",res={};
+const U={1:{mcq:[...MCQ,...MCQ2],tf:[...TF,...TF2],terms:[...TERMS,...TERMS2],essay:[...ESSAY,...ESSAY2]}};
+const N={mcq:"Multiple choice",tf:"True / False",terms:"Key terms",essay:"Essay"};
+let unit=1;
+const T=new Proxy({},{get:(_,k)=>[N[k],U[unit][k]]});
+const scored=["mcq","tf","terms"],tot=()=>scored.reduce((a,k)=>a+U[unit][k].length,0);
+function el(t,c,h){const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.textContent=h;return e}
+function stats(){const v=Object.values(res);$("#sc").textContent=v.filter(x=>x).length;$("#an").textContent=v.length;$("#tt").textContent=tot();$("#pg").style.width=(v.length/tot()*100)+"%"}
+function head(n,q,ar,card){const h=el("div","qh");h.append(el("div","n",n),el("div","qt",q));const b=el("button","tr","عربي");b.setAttribute("aria-label","Translate to Arabic");const a=el("div","ar",ar);b.onclick=()=>a.classList.toggle("on");h.append(b);card.append(h,a)}
+function mcq(d,i){const k="mcq"+i,c=el("div","q");head(i+1,d[0],d[1],c);const o=el("div","opts"),f=el("div","fb");
+d[2].forEach((t,j)=>{const b=el("button","o",t);b.onclick=()=>{if(k in res)return;const ok=j===d[3];res[k]=ok;[...o.children].forEach((x,m)=>{x.disabled=true;if(m===d[3])x.classList.add("ok")});if(!ok)b.classList.add("bad");f.className="fb "+(ok?"ok":"bad");f.textContent=ok?"✓ Correct!":"✗ Wrong. The correct answer is: "+d[2][d[3]];stats()};o.append(b)});c.append(o,f);return c}
+function tf(d,i){const k="tf"+i,c=el("div","q");head(i+1,d[0],d[1],c);const o=el("div","row"),f=el("div","fb");
+["True","False"].forEach((t,j)=>{const b=el("button","o",t);b.onclick=()=>{if(k in res)return;const ans=!!d[2],ok=(j===0)===ans;res[k]=ok;[...o.children].forEach((x,m)=>{x.disabled=true;if((m===0)===ans)x.classList.add("ok")});if(!ok)b.classList.add("bad");f.className="fb "+(ok?"ok":"bad");
+if(ok){f.textContent="✓ Correct! The statement is "+(ans?"true.":"false.");if(!ans){const s=el("span",0," "+d[3]);f.append(s)}}else{f.textContent="✗ Wrong. The statement is "+(ans?"true.":"false. ");if(!ans){const s=el("span",0,d[3]);f.append(s)}}stats()};o.append(b)});c.append(o,f);return c}
+function term(d,i){const k="terms"+i,c=el("div","q");head(i+1,"Define: "+d[0],"عرّف: "+d[1],c);const a=el("div","ans",d[2]),ar=el("div","ar",d[3]);a.append(ar);
+const r=el("div","row"),show=el("button","o","Show definition"),yes=el("button","o","I knew it"),no=el("button","o","Not yet");yes.hidden=no.hidden=true;
+show.onclick=()=>{a.classList.add("on");ar.classList.add("on");show.hidden=true;if(!(k in res)){yes.hidden=no.hidden=false}};
+const grade=v=>{res[k]=v;yes.disabled=no.disabled=true;(v?yes:no).classList.add(v?"ok":"bad");stats()};yes.onclick=()=>grade(true);no.onclick=()=>grade(false);
+r.append(show,yes,no);c.append(r,a);return c}
+function essay(d,i){const c=el("div","q");head(i+1,d[0],d[1],c);const a=el("div","ans","Model answer: "+d[2]),r=el("div","row"),b=el("button","o","Show model answer");b.onclick=()=>{a.classList.toggle("on");b.textContent=a.classList.contains("on")?"Hide model answer":"Show model answer"};r.append(b);c.append(r,a);return c}
+const F={mcq,tf,terms:term,essay};
+function render(){L.textContent="";T[tab][1].forEach((d,i)=>L.append(F[tab](d,i)));document.querySelectorAll(".tab").forEach(b=>{b.setAttribute("aria-selected",b.dataset.t===tab);b.textContent=N[b.dataset.t]+" ("+U[unit][b.dataset.t].length+")"});document.querySelectorAll(".ut").forEach(b=>b.setAttribute("aria-selected",+b.dataset.u===unit));stats()}
+const tabs=$("#tabs");
+["mcq","tf","terms","essay"].forEach(k=>{const b=el("button","tab","");b.dataset.t=k;b.setAttribute("role","tab");b.onclick=()=>{tab=k;render();scrollTo({top:0})};tabs.append(b)});
+const rs=el("button","reset","Reset all");rs.onclick=()=>{res={};render()};tabs.append(rs);
+render();
+// animated background: drifting writing symbols from every era
+const cv=$("#bg"),cx=cv.getContext("2d"),G="☥ 日 Α Ω א ع A B C Ꙭ ✒ ✎ ❦ ¶ 𓂀 𒀭".split(" ");let W,H,P=[];
+function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;P=Array.from({length:Math.min(46,Math.floor(W/28))},()=>({x:Math.random()*W,y:Math.random()*H,s:18+Math.random()*44,v:.12+Math.random()*.35,r:Math.random()*6,w:(Math.random()-.5)*.006,g:G[Math.random()*G.length|0],a:.05+Math.random()*.12}))}
+function draw(){const c=getComputedStyle(document.documentElement).getPropertyValue("--glyph")||"224,180,74";cx.clearRect(0,0,W,H);P.forEach(p=>{p.y-=p.v;p.r+=p.w;if(p.y<-60){p.y=H+60;p.x=Math.random()*W}cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.font=p.s+"px Cinzel,serif";cx.fillStyle="rgba("+c+","+p.a+")";cx.fillText(p.g,0,0);cx.restore()});if(!matchMedia("(prefers-reduced-motion:reduce)").matches)requestAnimationFrame(draw)}
+addEventListener("resize",size);size();draw();
+</script>
+<a href="index.html" id="homeLink" style="position:fixed;left:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:99;padding:.5rem 1rem;border-radius:99px;background:rgba(0,0,0,.85);color:#ffc4de;border:1px solid #e0b44a;font:600 14px system-ui,sans-serif;text-decoration:none;backdrop-filter:blur(6px)">← Home | الرئيسية</a>
+</body>
+</html>
