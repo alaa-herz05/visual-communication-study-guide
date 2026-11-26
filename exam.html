@@ -26,10 +26,10 @@ h1{font-family:Cinzel,serif;font-size:clamp(1.7rem,5vw,2.7rem);margin:.2em 0;col
 .prog i{display:block;height:100%;width:0;background:var(--gold);transition:width .4s}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
 button{font:inherit;color:inherit;cursor:pointer}
-.tab,.ut{border:1px solid var(--line);background:transparent;padding:7px 14px;border-radius:999px;font-family:Cinzel,serif;font-size:.85rem}
-.tab[aria-selected="true"],.ut[aria-selected="true"]{background:var(--gold);color:#fff;border-color:var(--gold)}.units{margin:0 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
-:root[data-theme="dark"] .tab[aria-selected="true"],:root[data-theme="dark"] .ut[aria-selected="true"]{color:#1a1426}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tab[aria-selected="true"],:root:not([data-theme="light"]) .ut[aria-selected="true"]{color:#1a1426}}
+.tab,.ut,.ft{border:1px solid var(--line);background:transparent;padding:7px 14px;border-radius:999px;font-family:Cinzel,serif;font-size:.85rem}
+.tab[aria-selected="true"],.ut[aria-selected="true"],.ft[aria-selected="true"]{background:var(--gold);color:#fff;border-color:var(--gold)}.units{margin:0 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+:root[data-theme="dark"] .tab[aria-selected="true"],:root[data-theme="dark"] .ut[aria-selected="true"],:root[data-theme="dark"] .ft[aria-selected="true"]{color:#1a1426}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tab[aria-selected="true"],:root:not([data-theme="light"]) .ut[aria-selected="true"],:root:not([data-theme="light"]) .ft[aria-selected="true"]{color:#1a1426}}
 .reset{margin-left:auto;border:1px solid var(--line);background:transparent;border-radius:999px;padding:7px 14px;font-size:.85rem}
 .q{background:var(--card);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:16px;padding:18px;margin:14px 0}
 .qh{display:flex;gap:12px;align-items:flex-start}
@@ -264,11 +264,12 @@ const ESSAY2=[
 ];
 const $=s=>document.querySelector(s),L=$("#list");
 let tab="mcq",res={};
+MCQ2.slice(0,14).forEach(d=>d.t=1);TF2.slice(0,10).forEach(d=>d.t=1);TERMS2.slice(0,2).forEach(d=>d.t=1);ESSAY2[0].t=1;
 const U={1:{mcq:[...MCQ,...MCQ2],tf:[...TF,...TF2],terms:[...TERMS,...TERMS2],essay:[...ESSAY,...ESSAY2]}};
 const N={mcq:"Multiple choice",tf:"True / False",terms:"Key terms",essay:"Essay"};
-let unit=1;
+let unit=1,flt=false;
 const T=new Proxy({},{get:(_,k)=>[N[k],U[unit][k]]});
-const scored=["mcq","tf","terms"],tot=()=>scored.reduce((a,k)=>a+U[unit][k].length,0);
+const scored=["mcq","tf","terms"],tot=()=>scored.reduce((a,k)=>a+U[unit][k].filter(d=>!flt||d.t).length,0);
 function el(t,c,h){const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.textContent=h;return e}
 function stats(){const v=Object.values(res);$("#sc").textContent=v.filter(x=>x).length;$("#an").textContent=v.length;$("#tt").textContent=tot();$("#pg").style.width=(v.length/tot()*100)+"%"}
 function head(n,q,ar,card){const h=el("div","qh");h.append(el("div","n",n),el("div","qt",q));const b=el("button","tr","عربي");b.setAttribute("aria-label","Translate to Arabic");const a=el("div","ar",ar);b.onclick=()=>a.classList.toggle("on");h.append(b);card.append(h,a)}
@@ -284,10 +285,11 @@ const grade=v=>{res[k]=v;yes.disabled=no.disabled=true;(v?yes:no).classList.add(
 r.append(show,yes,no);c.append(r,a);return c}
 function essay(d,i){const c=el("div","q");head(i+1,d[0],d[1],c);const a=el("div","ans","Model answer: "+d[2]),r=el("div","row"),b=el("button","o","Show model answer");b.onclick=()=>{a.classList.toggle("on");b.textContent=a.classList.contains("on")?"Hide model answer":"Show model answer"};r.append(b);c.append(r,a);return c}
 const F={mcq,tf,terms:term,essay};
-function render(){L.textContent="";T[tab][1].forEach((d,i)=>L.append(F[tab](d,i)));document.querySelectorAll(".tab").forEach(b=>{b.setAttribute("aria-selected",b.dataset.t===tab);b.textContent=N[b.dataset.t]+" ("+U[unit][b.dataset.t].length+")"});document.querySelectorAll(".ut").forEach(b=>b.setAttribute("aria-selected",+b.dataset.u===unit));stats()}
+function render(){L.textContent="";let c=0;T[tab][1].forEach((d,i)=>{if(flt&&!d.t)return;const e=F[tab](d,i);e.querySelector(".n").textContent=++c;L.append(e)});if(!c)L.append(el("div","res","No questions here."));document.querySelectorAll(".tab").forEach(b=>{b.setAttribute("aria-selected",b.dataset.t===tab);b.textContent=N[b.dataset.t]+" ("+U[unit][b.dataset.t].filter(d=>!flt||d.t).length+")"});document.querySelector(".ft").setAttribute("aria-selected",flt);document.querySelectorAll(".ut").forEach(b=>b.setAttribute("aria-selected",+b.dataset.u===unit));stats()}
 const tabs=$("#tabs");
 ["mcq","tf","terms","essay"].forEach(k=>{const b=el("button","tab","");b.dataset.t=k;b.setAttribute("role","tab");b.onclick=()=>{tab=k;render();scrollTo({top:0})};tabs.append(b)});
-const rs=el("button","reset","Reset all");rs.onclick=()=>{res={};render()};tabs.append(rs);
+const rs=el("button","reset","Reset all");const fb=el("button","ft","Table questions (27)");fb.title="Xylography vs Typography table";fb.onclick=()=>{flt=!flt;res={};render();scrollTo({top:0})};tabs.append(fb);
+rs.onclick=()=>{res={};render()};tabs.append(rs);
 render();
 // animated background: drifting writing symbols from every era
 const cv=$("#bg"),cx=cv.getContext("2d"),G="☥ 日 Α Ω א ع A B C Ꙭ ✒ ✎ ❦ ¶ 𓂀 𒀭".split(" ");let W,H,P=[];
